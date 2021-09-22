@@ -1,0 +1,46 @@
+<view class="calender">
+    <view class="calender_title">
+        <button class="mini-btn" type="primary" size="mini" disabled="{{swiperCurrent==0}}" catchtap="previousMonth">上个月</button>
+            <view class="showDate">{{calenderTitle}}</view>
+        <button class="mini-btn" type="primary" size="mini" disabled="{{swiperCurrent==9}}" catchtap="nextMonth">下个月</button>
+    </view>
+    <view class="calender_con">
+        <view class="week">
+            <block tt:for="{{weekArr}}"  tt:key=index>
+                <view class="week_i">{{item}}</view>
+            </block>
+        </view>
+        <!-- <view  class="calenderSwiper">
+            <view class="swiper-item">
+                <block tt:for="{{dayArr}}" tt:key="index">
+                    <view tt:if="{{item.type=='disable'}}" class="dayBox  {{item.type=='disable'?'disabledStyle':''}}" >{{item.day?item.day:''}}</view>
+                    <view tt:if="{{item.type=='normal'}}" data-item="{{item}}" catchtap="selectCalenderDay" class="dayBox" >{{item.day?item.day:''}}</view>
+                    <view tt:if="{{item.type=='select'}}" class="dayBox  {{item.type=='select'?'selectStyle':''}}" >{{item.day?item.day:''}}</view>
+                </block>
+            </view>
+        </view>  -->
+        <swiper class="calenderSwiper" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" 
+        autoplay="{{autoplay}}" bindchange="currentChange" interval="{{interval}}" current="{{swiperCurrent}}" duration="{{duration}}">
+        <block tt:for="{{swiperArr}}" tt:key="index">
+          <swiper-item>
+            <view class="swiper-item">
+                <block tt:for="{{item.list}}" tt:for-item='day' tt:for-index='dayIdx' tt:key="index">
+                    <view tt:if="{{day.type=='disable'}}" class="dayBox  {{day.type=='disable'?'disabledStyle':''}}" >{{day.day?day.day:''}}</view>
+                    <view tt:if="{{day.type=='normal'}}" data-item="{{day}}" catchtap="selectCalenderDay" class="dayBox" >
+                        {{day.day?day.day:''}}
+                        <view tt:if="{{day.hasReservation}}" class="point {{userIdentity=='auditer'?'redStyle':''}}"></view>
+                    </view>
+                    <view tt:if="{{day.type=='select'}}" class="dayBox  {{day.type=='select'?'selectStyle':''}}" >
+                        {{day.day?day.day:''}}
+                        </view>
+                </block>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    
+
+
+</view>
+          

@@ -1,0 +1,60 @@
+.calender{
+    padding:0 20rpx;
+}
+.calender_title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.showDate{
+    width: 200rpx;
+    padding: 0 20rpx;
+    font-size: 30rpx;
+    text-align: center;
+}
+.week{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid  #f3f3f3f3;
+}
+.week_i,
+.dayBox{
+    width: 14.285%;
+    text-align: center;
+    line-height: 100rpx;
+    font-size: 28rpx;
+}
+.calenderSwiper{
+    width: 100%;
+    height: 600rpx;
+}
+.swiper-item{
+    height: 100%; 
+    width: 100%;  
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+.dayBox{
+    height: 100rpx;
+    border-radius: 5px;
+}
+.disabledStyle{
+    color: #c8c9cc;
+}
+.selectStyle{
+    background: #009BD7;
+    color: #fff;
+}
+.point{
+    width: 20rpx;
+    height: 20rpx;
+    border-radius: 100%;
+    background: #009BD7;
+    margin: -20rpx auto 0;
+}
+.redStyle{
+    background:red;
+}
